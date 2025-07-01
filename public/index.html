@@ -1,39 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Mushroom Light Data Entry</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mushroom Light Data App</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Enter Measurement</h1>
-  <form id="dataForm">
-    <!-- same inputs as before… -->
-    <label>Timestamp:<br>
-      <input type="datetime-local" id="timestamp" required>
-    </label><br><br>
-    <label>Species:<br>
-      <input type="text" id="species" required>
-      <label>Treatment:<br>
-      <input type="text" id="treatment" required>
-      <label>Replicate:<br>
-<input type="number" id="replicate" min="1" required>
-<label>Temp:<br>
-<input type="number" step="0.1" id="temp_c" required>
-<label>Humidity:<br>
-<input type="number" step="0.1" id="humidity_pct" required>
-<label>CO2 ppm:<br>
-<input type="number" id="co2_ppm" required>
-<label>PAR value:<br>
-<input type="number" id="par" required>
-<label>Notes:<br>
-<textarea id="notes"></textarea>
-    </label><br><br>
-    <!-- …rest of the fields… -->
-    <button type="submit">Submit</button>
-  </form>
+  <nav class="nav">
+    <a href="index.html" class="nav__item">Home</a>
+    <a href="dashboard.html" class="nav__item">Dashboard</a>
+  </nav>
 
-  <h2>All Data</h2>
-  <pre id="dump"></pre>
+  <main class="container">
+    <h1>Enter Measurement</h1>
+
+    <form id="dataForm" class="form-grid">
+      <div class="field">
+        <label for="timestamp">Timestamp</label>
+        <input type="datetime-local" id="timestamp" required>
+      </div>
+      <div class="field">
+        <label for="species">Species</label>
+        <input type="text" id="species" required>
+      </div>
+      <div class="field">
+        <label for="treatment">Treatment</label>
+        <input type="text" id="treatment" required>
+      </div>
+      <div class="field">
+        <label for="replicate">Replicate</label>
+        <input type="number" id="replicate" min="1" required>
+      </div>
+      <div class="field">
+        <label for="temp_c">Temp (°C)</label>
+        <input type="number" step="0.1" id="temp_c" required>
+      </div>
+      <div class="field">
+        <label for="humidity_pct">Humidity (%)</label>
+        <input type="number" step="0.1" id="humidity_pct" required>
+      </div>
+      <div class="field">
+        <label for="co2_ppm">CO₂ (ppm)</label>
+        <input type="number" id="co2_ppm" required>
+      </div>
+      <div class="field">
+        <label for="par">PAR (µmol·m⁻²·s⁻¹)</label>
+        <input type="number" id="par" required>
+      </div>
+      <div class="field full-width">
+        <label for="notes">Notes</label>
+        <textarea id="notes" rows="3"></textarea>
+      </div>
+      <div class="field full-width">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    <div class="actions">
+      <a id="downloadCsv" class="button" href="/api/data.csv" download="EnvironmentalData.csv">
+        ⬇️ Download CSV
+      </a>
+    </div>
+
+    <h2>All Data</h2>
+    <pre id="dump" class="dump">Loading…</pre>
+  </main>
 
   <script src="script.js"></script>
 </body>
