@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mushroom Light Data Entry</title>
+</head>
+<body>
+  <h1>Enter Measurement</h1>
+  <form id="dataForm">
+    <!-- same inputs as before… -->
+    <label>Timestamp:<br>
+      <input type="datetime-local" id="timestamp" required>
+    </label><br><br>
+    <label>Species:<br>
+      <input type="text" id="species" required>
+      <label>Treatment:<br>
+      <input type="text" id="treatment" required>
+      <label>Replicate:<br>
+<input type="number" id="replicate" min="1" required>
+<label>Temp:<br>
+<input type="number" step="0.1" id="temp_c" required>
+<label>Humidity:<br>
+<input type="number" step="0.1" id="humidity_pct" required>
+<label>CO2 ppm:<br>
+<input type="number" id="co2_ppm" required>
+<label>PAR value:<br>
+<input type="number" id="par" required>
+<label>Notes:<br>
+<textarea id="notes"></textarea>
+    </label><br><br>
+    <!-- …rest of the fields… -->
+    <button type="submit">Submit</button>
+  </form>
+
+  <h2>All Data</h2>
+  <pre id="dump"></pre>
+
+  <script src="script.js"></script>
+</body>
+</html>

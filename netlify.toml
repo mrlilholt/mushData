@@ -1,0 +1,15 @@
+[build]
+  publish   = "public"
+  functions = "functions"
+
+[[redirects]]
+  from    = "/api/data"
+  to      = "/.netlify/functions/get-data"
+  status  = 200
+  methods = ["GET"]
+
+[[redirects]]
+  from    = "/api/data"
+  to      = "/.netlify/functions/submit-data"
+  status  = 200
+  methods = ["POST"]
