@@ -7,6 +7,12 @@
   to      = "/.netlify/functions/get-data"
   status  = 200
   methods = ["GET"]
+  
+[[redirects]]
+  from    = "/api/data.csv"
+  to      = "/.netlify/functions/get-csv"
+  status  = 200
+  methods = ["GET"]
 
 [[redirects]]
   from    = "/api/data"
