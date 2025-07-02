@@ -2,7 +2,7 @@
 
 // 1. Point at your raw GitHub URL
 const CSV_URL = 
-  'https://raw.githubusercontent.com/<GITHUB_OWNER>/<GITHUB_REPO>/main/data/EnvironmentalDataSheet.csv';
+  'https://raw.githubusercontent.com/mrlilholt/mushData/main/data/EnvironmentalDataSheet.csv';
 
 (async function(){
   try {
